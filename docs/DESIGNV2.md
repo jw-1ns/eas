@@ -26,14 +26,14 @@ Here is the same example broken down in to the technical components, in this exa
    1. User interacts with EAS Frontend[^6]
    2. EAS Frontend calls an DEES API which interacts with the DEES Maddy sender /recepient rewriting(DMSR) custom developed module [^74] or alternatively interacts with the server EAS server[^6].
    3. MSR Module interacts with go-1ns [^10] to update the EAS Contract[^6] in the Web3 Backend.
-3. Done! Now you can receive emails at hello@fsociety.country. All emails will be secretly forwarded to mr.robot@gmail.com
+3. Done! Now you can receive emails at hello@fsociety.country. All emails will be secretly forwarded to mr.robot@gmail.com6
    1. An email is sent to hello@fsociety.country.
    2. DEES SMTP Server Receives the email and processes it via the SMTP Pipeline [^73] which updates the recipient via DEES Maddy sender /recepient rewriting(DMSR) custom developed module [^74] and then forwards the email 
 
 
 **Infrastructure Components and Development Tasks**
 
-*Note for the DEES API development we can either enhance the existing Email Alias Service [^6} function to add SMTP administration API's or build a standlone server in go (Option 2). Initial thoughts is option 1 may be the preferred approach however both options have been included below for completeness.*
+*Note for the DEES API development we can either enhance the existing Email Alias Service [^6] function to add SMTP administration API's or build a standlone server in go (Option 2). Initial thoughts is option 1 may be the preferred approach however both options have been included below for completeness.*
 
 
 1. Email Alias Service [^6]
@@ -84,7 +84,7 @@ For a comparison of SMTP servers see [Appendix A - SMTP Server Review](#appendix
 
 **Infrastructure Components and Development Tasks**
 
-*Note for the DEES API development we can either enhance the existing Email Alias Service [^6} function to add SMTP administration API's or build a standlone server in go (Option 2). Initial thoughts is option 1 may be the preferred approach however both options have been included below for completeness.*
+*Note for the DEES API development we can either enhance the existing Email Alias Service [^6] function to add SMTP administration API's or build a standlone server in go (Option 2). Initial thoughts is option 1 may be the preferred approach however both options have been included below for completeness.*
 
 DEES - API SMTP Administration 
 1. Email Alias Service - Server [^6] (Option 1)
@@ -143,7 +143,7 @@ Sample Repositories
 
 **Infrastructure Components and Development Tasks**
 
-*Note for the DEES API development we can either enhance the existing Email Alias Service [^6} function to add SMTP administration API's or build a standlone server in go (Option 2). Initial thoughts is option 1 may be the preferred approach however both options have been included below for completeness.*
+*Note for the DEES API development we can either enhance the existing Email Alias Service [^6] function to add SMTP administration API's or build a standlone server in go (Option 2). Initial thoughts is option 1 may be the preferred approach however both options have been included below for completeness.*
 
 
 1. Email Alias Service [^6]
