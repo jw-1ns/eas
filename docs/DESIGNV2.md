@@ -166,40 +166,7 @@ Sample Repositories
       3. Develop [API Layer for SMTP administation](#api-layer-smtp-administation)
 
 
-### Appendix C - Reference Architectures
-
-Following are some reference architectures
-
-**Modulo 1wallet components**
-
-The following is a componet diagram for 1wallet [^7]. This can be leveraged as well as the sms-wallet [^8] for [Digital Identity Support](#digitial-identity-support) and [Crypto Asset Management](#crypto-asset-management).
-
-![Modulo Components](/assets/research/modulo-components.jpeg "Modulo Components")
-
-**Dmail architecture**
-
-This architecure is from the Dmail Network litepaper [^42]. Their plan is to build 5 technical modules:
-
-1. Mail services
-2. Distributed storage
-3. Authentication Gateway
-4. Mail Gateway
-5. Asset Gateway
-
-![Dmail Architecture](/assets/research/dmail-architecture.png "Dmail Architecture")
-
-**Mailchain Ecosystem**
-
-This ecosystem diagram is from the Mailchain Whitepaper [^41]. Their implementation [^53] includes three core, independent technical components:
-
-1. Registry: provides an immutable history of records and changes
-2. Storage: provides data availability guarantees to meet data lifecycle and retention policies.
-3. Transport: accepts and stores “delivery requests”, also known as message transactions, which are immutable and contain the information needed for a recipient to determine if a delivery request is intended for them, then locate their messages.
-
-![Mailchain Ecosystem](/assets/research/mailchain-ecosystem.png "Mailchain Ecosystem")
-
-
-### Appendix D - Email Alias Service
+### Appendix C - Email Alias Service
 
 The Email Alias Service (EAS) provides .country domain owners email alias addresses which they can privately forward to their existing email addresses.
 
