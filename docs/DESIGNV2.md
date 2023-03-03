@@ -24,11 +24,11 @@ Here is the same example broken down in to the technical components, in this exa
    3. User Authorizes and purchases the domain using the 1ns contracts deployed via ens-deployer [^9].
 2. Activate Email Alias Service by setting a forwarding email address (e.g., mr.robot@gmail.com)
    1. User interacts with EAS Frontend[^6]
-   2. EAS Frontend calls an DEES API which interacts with the DEES Maddy sender /recepient rewriting(DMSR) custom developed module [^74] or alternatively interacts with the server EAS server[^6].
-   3. MSR Module interacts with go-1ns [^10] to update the EAS Contract[^6] in the Web3 Backend.
+   2. EAS Frontend calls interacts directly with `EAS.sol` checking the signer of the alias update transaction is the owner of the domain and updating alias information in EASConfig . *Note: An alternate approach is the front-end calls a DEES API which interacts with the DEES Maddy sender /recipient rewriting(DMSR) custom developed module [^74] or alternatively interacts with the server EAS server[^6].*
+   3. If using a go-enabled api server the MSR Module interacts with go-1ns [^10] to update the EAS Contract[^6] setting alias information in the Web3 Backend.
 3. Done! Now you can receive emails at hello@fsociety.country. All emails will be secretly forwarded to mr.robot@gmail.com6
    1. An email is sent to hello@fsociety.country.
-   2. DEES SMTP Server Receives the email and processes it via the SMTP Pipeline [^73] which updates the recipient via DEES Maddy sender /recepient rewriting(DMSR) custom developed module [^74] and then forwards the email 
+   2. DEES SMTP Server Receives acts as the MX server to forward the email and processes it via the SMTP Pipeline [^73] which updates the recipient via DEES Maddy sender /recepient rewriting(DMSR) custom developed module [^74] and then forwards the email.
 
 
 **Infrastructure Components and Development Tasks**
@@ -93,21 +93,6 @@ DEES - API SMTP Administration
   1. Build lightweight go server
   2. Integrate with go-1ns
   3. Develop [API Layer for SMTP administation](#api-layer-smtp-administation)
-
-## Encrypted Mail
-
-We could generate a key-pair for EAS user, and have the public key committed to EAS contract. We can implement something on our mail server such that all mails will be encrypted using the public key (if the user opts in), so only the user who holds the private key may decrypt and view the emails. It is hard to make this work for existing wallets (such as MetaMask), since the private key is not exposed and there is generally no "decrypt" API offered by the wallet. However, we may be able to add this as an interesting feature to SMS Wallet, since the private key is readily available in the local store.
-
-
-## Decentralized Storage Plugin
-
-Storage of emails could be done via IPFS and optionally encrypted.
-For a reference implementation see Message Lifecyle in the Mailchain Whitepaper[^31].
-
-**Infrastructure and developement tasks**
-1. Develop IPFS Storage Plugin [^75]
-2. Replace DKIM Plugin[^76] with web3 encryprton module.
-
 
 ## Appendices
 
